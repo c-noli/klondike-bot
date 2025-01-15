@@ -4,7 +4,7 @@ import random
 import os
 import asyncio
 from openai import OpenAI
-os.environ["OPENAI_API_KEY"] = os.environ['BOT']
+os.environ["OPENAI_API_KEY"] = os.environ['GPT']
 aiClient = OpenAI()
 
 Memory = {}
