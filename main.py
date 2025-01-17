@@ -77,7 +77,7 @@ async def gamble(interaction: discord.Interaction):
 
     # increase calculation
     increase = 5
-    rng = random.randint(1,3) 
+    rng = random.randint(1,3000) 
     type = 0
     if rng == 1:
         type = 1
