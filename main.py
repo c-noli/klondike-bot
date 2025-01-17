@@ -24,7 +24,7 @@ class Client(commands.Bot):
         print(f'Logged on as {self.user}!')
 
         try:
-            guild = discord.Object(id=1053311850726559774)
+            guild = discord.Object(id=1320513936176709643)
             synced = await self.tree.sync(guild = guild)
             print(f'Synced {len(synced)} commands to guild {guild.id}')
         except Exception as e:
@@ -70,7 +70,7 @@ intents.message_content = True
 
 client = Client(command_prefix="k!", intents=intents)
 
-GUILD_ID = discord.Object(id=1053311850726559774)
+GUILD_ID = discord.Object(id=1320513936176709643)
 
 @client.tree.command(name="gamble", description="gamble money!", guild=GUILD_ID)
 async def gamble(interaction: discord.Interaction):
