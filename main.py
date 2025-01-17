@@ -19,6 +19,8 @@ aiClient = OpenAI()
 
 Memory = {}
 
+coinID = 1329678474314780704
+
 class Client(commands.Bot):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
@@ -114,11 +116,11 @@ async def gamble(interaction: discord.Interaction):
 
     print(jsondata)
     if type == 1:
-        await interaction.response.send_message(f"# JACKPOT 777! GOT {increase} FOR ({jsondata[id]["money"]}) TOTAL <:Koin:1329667468599496724>!")
+        await interaction.response.send_message(f"# JACKPOT 777! GOT {increase} FOR ({jsondata[id]["money"]}) TOTAL <:Koin:coinID>!")
     elif type == 2:
-        await interaction.response.send_message(f"WIN! Got {increase} for ({jsondata[id]["money"]}) total <:Koin:1329667468599496724>")
+        await interaction.response.send_message(f"WIN! Got {increase} for ({jsondata[id]["money"]}) total <:Koin:coinID>")
     elif type == 3:
-        await interaction.response.send_message(f"lose :( lost {increase} for ({jsondata[id]["money"]}) total <:Koin:1329667468599496724>")
+        await interaction.response.send_message(f"lose :( lost {increase} for ({jsondata[id]["money"]}) total <:Koin:coinID>")
 
 @client.tree.command(name="richest", description="see the richest members", guild=GUILD_ID)
 async def richest(interaction: discord.Interaction):
@@ -132,7 +134,7 @@ async def richest(interaction: discord.Interaction):
 
         for i in sortedT:
             count + 1
-            string = string + "\n#" + str(count) + " " + sortedT[i]["username"] + " - " + str(sortedT[i]["money"]) + "<:Koin:1329667468599496724>"
+            string = string + "\n#" + str(count) + " " + sortedT[i]["username"] + " - " + str(sortedT[i]["money"]) + "<:Koin:coinID>"
 
         await interaction.response.send_message(string)
 
